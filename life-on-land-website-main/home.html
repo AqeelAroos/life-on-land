@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Life on Land</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f8e9;
+      color: #2e7d32;
+      overflow-x: hidden;
+    }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      background: url('images/forest.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner h1 {
+      color: white;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .mission-card {
+      background-color: white;
+      border-left: 6px solid #388e3c;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.2s ease;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .mission-card i {
+      font-size: 2.5rem;
+      color: #66bb6a;
+      margin-top: 4px;
+    }
+
+    .mission-content h2 {
+      margin: 0;
+      color: #33691e;
+      font-size: 1.8rem;
+    }
+
+    .mission-content p {
+      margin-top: 10px;
+      color: #444;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .topic-card {
+      display: flex;
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+    }
+
+    .topic-image {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      min-height: 240px;
+    }
+
+    .topic-content {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .topic-content h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+      color: #33691e;
+    }
+
+    .topic-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .next-btn {
+      align-self: flex-end;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #8bc34a;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background-color: #558b2f;
+    }
+
+    .related-links {
+  padding: 40px 20px;
+  background-color: #e8f5e9;
+  text-align: center;
+}
+
+.related-links h2 {
+  margin-bottom: 25px;
+  color: #33691e;
+  font-size: 1.8rem;
+}
+
+.card-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link-card {
+  background: white;
+  border-radius: 12px;
+  width: 220px;
+  text-decoration: none;
+  color: #2e7d32;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.link-card:hover {
+  transform: translateY(-6px);
+}
+
+.link-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.link-card h3 {
+  margin: 15px 0 5px;
+  font-size: 1.2rem;
+}
+
+.link-card p {
+  font-size: 0.95rem;
+  padding: 0 15px 15px;
+  color: #4e684e;
+}
+
+
+   
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .topic-card {
+        flex-direction: column;
+      }
+
+      .topic-image {
+        height: 200px;
+      }
+
+      .mission-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .mission-card i {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+
+  <script>
+    const topics = [
+      {
+        title: "Forest Conservation",
+        description: "Preserving forests is critical to climate balance, wildlife habitats, and biodiversity. Learn how sustainable forestry and reforestation efforts make a difference.",
+        image: "images/forest.jpg",
+        link: "content_ST1.html"
+      },
+      {
+        title: "Biodiversity Awareness",
+        description: "Explore the importance of biodiversity and the need to protect endangered species and their ecosystems for a healthy planet.",
+        image: "images/biodiversity.jpg",
+        link: "content_ST2.html"
+      },
+      {
+        title: "Land Restoration",
+        description: "From desertification to deforestation, discover how degraded lands can be restored through ecological and community-driven practices.",
+        image: "images/land.jpeg",
+        link: "content_ST3.html"
+      },
+      {
+        title: "Community Engagement",
+        description: "Empowering communities is key to sustainable land management. Learn how education, outreach, and local action drive global impact.",
+        image: "images/community.jpg",
+        link: "content_ST4.html"
+      }
+    ];
+
+    let current = 0;
+
+    function showTopic(index) {
+      const topic = topics[index];
+      document.querySelector('.topic-image').style.backgroundImage = `url('${topic.image}')`;
+      document.querySelector('.topic-content h2').textContent = topic.title;
+      document.querySelector('.topic-content p').textContent = topic.description;
+      document.querySelector('.next-btn').onclick = () => {
+        if (index + 1 < topics.length) {
+          showTopic(index + 1);
+        } else {
+          window.location.href = topic.link;
+        }
+      };
+    }
+
+    window.onload = () => {
+      showTopic(current);
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="logo-container">
+      <img src="images/logo1.png" alt="Life on Land logo: tree and nature symbol" class="logo" />
+      <h1>Life on Land</h1>
+    </div>
+    <nav class="main-nav" aria-label="Main Navigation">
+      <a href="home.html" class="active">Home</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="table.html">Table</a>
+      <a href="profile.html">Profile</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="sitemap.html">Sitemap</a>
+      <a href="content.html">Content</a>
+      <a href="team.html">Team</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Explore Our Topics</h1>
+  </div>
+
+  <!-- Mission -->
+  <main class="container">
+    <div class="mission-card">
+      <i class="fas fa-seedling" aria-hidden="true"></i>
+      <div class="mission-content">
+        <h2>Our Mission</h2>
+        <p>
+          We are committed to supporting <strong>UN Sustainable Development Goal 15: Life on Land</strong>, by raising awareness and encouraging real action toward reforestation, biodiversity conservation, and land restoration. Our platform provides engaging and accessible content to educate communities and promote sustainable land use practices globally and locally. By connecting volunteers, sharing knowledge, and showcasing impact stories, we aim to inspire collective responsibility to restore Earth’s ecosystems.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Topic Card -->
+  <section class="topic-card">
+    <div class="topic-image"></div>
+    <div class="topic-content">
+      <h2>Loading...</h2>
+      <p>Please wait while we load the topic.</p>
+      <button class="next-btn">Next Topic →</button>
+    </div>
+  </section>
+
+  <!-- Quick Links Card Section -->
+<section class="related-links">
+  <h2>Related Pages</h2>
+  <div class="card-row">
+    <a href="volunteer.html" class="link-card">
+      <img src="images/treeplanting.jpg" alt="Volunteer Page">
+      <h3>Volunteer</h3>
+      <p>Join conservation events and activities.</p>
+    </a>
+    <a href="table.html" class="link-card">
+      <img src="images/forest.jpg" alt="Data Table Page">
+      <h3>Data Table</h3>
+      <p>Explore protected forests by region.</p>
+    </a>
+    
+    <a href="feedback.html" class="link-card">
+      <img src="images/community.jpg" alt="Feedback Page">
+      <h3>Feedback</h3>
+      <p>Share your ideas and experience with us.</p>
+    </a>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Life on Land Team | <a href="pageEditor_ST2.html">Page Editor - Student 2</a></p>
+  </footer>
+
+</body>
+</html>
